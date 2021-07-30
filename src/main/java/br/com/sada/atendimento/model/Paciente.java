@@ -4,12 +4,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "pacientes")
 public class Paciente extends Pessoa {
-	
+
+	private Integer id;
 	private String prontuario;
 
 	public Paciente(String prontuario, String nome, String sobrenome, Endereco endereco, LocalDate dataNascimento, List<Telefone> telefone) {
@@ -22,6 +26,14 @@ public class Paciente extends Pessoa {
 	}
 	
 	public Paciente() {
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getProntuario() {

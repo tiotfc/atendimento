@@ -29,13 +29,8 @@ public class PacienteServiceImpl {
 	}
 
 	public Paciente buscarPorId(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return pacienteRepository.getById(id);
 	}
 
-	public void excluir(Integer id) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

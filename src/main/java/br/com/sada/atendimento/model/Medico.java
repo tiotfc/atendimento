@@ -10,14 +10,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "medicos")
 public class Medico extends Pessoa {
-	
+
 	private Integer crm;
 	private String especialidade;
-	
+
 	@ManyToMany(mappedBy = "medico")
 	private Integer id;
-	
-	public Medico(Integer crm, String especialidade, String nome, String sobrenome, Endereco endereco, LocalDate dataNascimento, List<Telefone> telefone) {
+
+	public Medico(Integer crm, String especialidade, String nome, String sobrenome, Endereco endereco,
+			LocalDate dataNascimento, List<Telefone> telefone) {
 		this.crm = crm;
 		this.especialidade = especialidade;
 		super.setNome(nome);
@@ -26,8 +27,12 @@ public class Medico extends Pessoa {
 		super.setDataNascimento(dataNascimento);
 		super.setTelefone(telefone);
 	}
-	
+
 	public Medico() {
+	}
+
+	public void setCrm(Integer crm) {
+		this.crm = crm;
 	}
 
 	public Integer getCrm() {
