@@ -4,18 +4,17 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "medicos")
 public class Medico extends Pessoa {
 
+	@OneToMany(mappedBy = "medico")
+	private Integer id;
 	private Integer crm;
 	private String especialidade;
-
-	@ManyToMany(mappedBy = "medico")
-	private Integer id;
 
 	public Medico(Integer crm, String especialidade, String nome, String sobrenome, Endereco endereco,
 			LocalDate dataNascimento, List<Telefone> telefone) {
@@ -31,12 +30,20 @@ public class Medico extends Pessoa {
 	public Medico() {
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
 	public void setCrm(Integer crm) {
 		this.crm = crm;
 	}
 
 	public Integer getCrm() {
 		return crm;
+	}
+
+	public void setEspecialidade(String especialidade) {
+		this.especialidade = especialidade;
 	}
 
 	public String getEspecialidade() {

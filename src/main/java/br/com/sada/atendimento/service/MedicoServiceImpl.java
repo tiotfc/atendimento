@@ -28,5 +28,8 @@ public class MedicoServiceImpl {
 		return medicoRepository.getById(id);
 	}
 
+	public List<Medico> listarPorEspecialidade(String especialidade) {
+		return medicoRepository.findAllByEspecialidade(especialidade);
+	}
 
 }

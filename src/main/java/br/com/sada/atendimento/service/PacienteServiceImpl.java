@@ -32,5 +32,4 @@ public class PacienteServiceImpl {
 		return pacienteRepository.getById(id);
 	}
 
-
 }

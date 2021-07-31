@@ -1,10 +1,13 @@
 package br.com.sada.atendimento.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import br.com.sada.atendimento.model.Consulta;
+import br.com.sada.atendimento.model.Medico;
+import br.com.sada.atendimento.model.Paciente;
 import br.com.sada.atendimento.model.dto.ConsultaEntradaDto;
 import br.com.sada.atendimento.repository.ConsultaRepository;
 
@@ -37,6 +40,18 @@ public class ConsultaServiceImpl {
 
 	public Consulta buscarPorId(Integer id) {
 		return consultaRepository.getById(id);
+	}
+
+	public List<Consulta> buscarPorMedicoPorMes(int mes, Medico medico) {
+		return consultaRepository.getByMedicoAndByMonth(mes, medico);
+	}
+	
+	public List<Paciente> buscarPacientesPorMedicoPorDia(LocalDate data, Medico medico) {
+		return consultaRepository.getByMedicoAndData(data, medico);
+	}
+	
+	public void deleteConsulta(Consulta consulta) {
+		consultaRepository.delete(consulta);
 	}
 
 

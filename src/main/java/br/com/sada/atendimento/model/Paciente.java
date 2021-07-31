@@ -7,12 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "pacientes")
 public class Paciente extends Pessoa {
 
+	@OneToMany(mappedBy = "paciente")
 	private Integer id;
 	private String prontuario;
 
@@ -30,10 +32,6 @@ public class Paciente extends Pessoa {
 
 	public Integer getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getProntuario() {

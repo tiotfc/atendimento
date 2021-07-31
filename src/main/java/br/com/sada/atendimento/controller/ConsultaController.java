@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.sada.atendimento.model.Consulta;
 import br.com.sada.atendimento.model.dto.ConsultaEntradaDto;
 import br.com.sada.atendimento.service.ConsultaServiceImpl;
-import br.com.sada.atendimento.service.MedicoServiceImpl;
-import br.com.sada.atendimento.service.PacienteServiceImpl;
 
 @RestController
 @RequestMapping("/consultas")
@@ -36,5 +34,4 @@ public class ConsultaController {
 	public List<Consulta> listarTodos() {
 		return consultaService.buscarTodos();
 	}
-	
 }

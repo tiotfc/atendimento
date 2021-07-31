@@ -1,0 +1,13 @@
+Descritivo do exercicio].
+ok - Paciente com informações como endereço e afins
+ok - Médico com informações no crm tem especialidade
+
+paciente vai poder buscar 
+ok - médico por especialidade
+ok - consultar agenda do médico com as datas livres
+
+médico vai se cadastrar
+ok - vai liberar agenda
+     consultar pacientes por data consulta;
+
+implementar hateoas onde for pertinente
