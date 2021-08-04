@@ -1,9 +1,7 @@
-    create table pacientes (
-       prontuario varchar(255),
-        id integer not null,
-        primary key (id)
-    );
-    alter table pacientes 
-       add constraint FK2t6bbjk59sy4n47ws651hm1al 
-       foreign key (id) 
-       references pessoas;
+CREATE TABLE pacientes (
+    prontuario VARCHAR(255),
+    id INTEGER NOT NULL,
+    PRIMARY KEY (id)
+);
+
+alter table pacientes add foreign key (id) references pessoas(id);
